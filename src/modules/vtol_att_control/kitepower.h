@@ -43,8 +43,7 @@
 #define KITEPOWER_H
 
 #include "vtol_type.h"
-#include <systemlib/perf_counter.h>  /** is it necsacery? **/
-#include <systemlib/param/param.h>
+#include <parameters/param.h>
 #include <drivers/drv_hrt.h>
 
 class Kitepower : public VtolType
@@ -96,10 +95,6 @@ private:
 	float _yaw_transition;	// yaw angle in which transition will take place
 	float _pitch_transition_start;  // pitch angle at the start of transition (tailsitter)
 
-
-	/** should this anouncement stay? **/
-	perf_counter_t	_loop_perf;			/**< loop performance counter */
-	perf_counter_t	_nonfinite_input_perf;		/**< performance counter for non finite input */
 
 	/**
 	 * Speed estimation for propwash controlled surfaces.
